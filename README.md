@@ -15,6 +15,30 @@ and ran:
 Result confusion matrix after majority voting for GT:
 ![result-confusion-matrix](./confusion_matrix.png)
 
+## Contents of notebooks:
+
+- 001 loads and extracts valid representable columns;
+  - outputs full time period `data.csv` (not included in GDrive, use code to produce);
+  - outputs small time period after 1st Oct `data_small.csv`
+- 002 loads `data_small.csv` and runs Semantic Analysis using cardiffnlp/twitter-roberta-base-sentiment-latest (tweetnlp pypi); 
+  - outputs `data_sent.csv`
+- 003 loads `data_small.csv` and runs `emotion` detection using `tweetnlp`:
+  - outputs `data_emotion.csv`
+- 004 loads `data_small.csv` and runs `irony` detection using `tweetnlp`:
+  - outputs `data_irony.csv`
+- 005 loads `data_small.csv` and runs `hate speech` detection using `tweetnlp`:
+  - outputs `data_hate.csv`
+- 006 loads `data_small.csv` and runs `offensive speech` detection using `tweetnlp`:
+  - outputs `data_offensive.csv`
+- 007 loads `data_small.csv` and runs `NER`(name entity recognition) detection using `tweetnlp`:
+- 008 loads `data_small.csv` and runs `topic` detection using `tweetnlp`:
+  - outputs `data_topic.csv`
+- 009 explores `data_topic` distribution;
+- 010 uses `data_small.csv` and runs LLMs:
+  - produces `models_results.json`
+- 011 data exploration of `models_results.json` with `data_sent.csv` and `data_small.csv`
+
+
 ## Original setup for personal running
 ```
 mkdir project
